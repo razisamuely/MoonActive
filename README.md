@@ -86,13 +86,16 @@ As it shown there is a convergence.
 The loss is defined as `squarederror`, which tends to overemphasize errors in samples with high target values. 
 Therefore, feature importance is highly affected by the target, as the model tends to split on features that 
 minimize the loss.
+Another important point is that it is clear that we have reached a point of overfitting, 
+both based on the plot and the difference between the test and train data that was examined above. 
+For future research, we will also implement early stopping.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/loss_convergence.png?token=GHSAT0AAAAAAB6GIEH4CS7Q2DZFMN4BFWSEZB3AEQA"  width="300" height="200">
 </p>
 
 When the same flow is run with the `squaredlogerror` loss, the model looks at the ratio of 
-error instead of the distance. In such a case, we can see a significant difference in feature importance.
+error instead of the euclidean distance. In such a case, we can see a significant difference in feature importance.
 
 **Features**
 <p align="center">
@@ -105,22 +108,16 @@ we need to ensure that the exceptional points are also present in future data.
 This is because the model tends to split on features that minimize the MSE, 
 and if exceptional points are not present in the future data, the model may not perform well on it.
 
-Even if the highest feature importance is among the following features: [list of features], 
-we cannot solely rely on it to ensure the model's accuracy on unseen data. 
-We should also evaluate the model's performance on a validation set and use additional 
-techniques such as feature selection, regularization, and ensembling to improve its accuracy.
+
 
 1. `org_price_usd_preceding_30_days`
 2. `spins_reward_preceding_30_days`
 3. `org_price_usd_preceding_7_to_30_days`
 
 
-
 These features suffer from high correlation, as shown in the gif in the top left corner. 
 High correlation between features can lead to multicollinearity, which can affect the model's 
-stability and interpretability. In such cases, it is often useful to perform feature selection or 
-dimensionality reduction techniques such as principal component analysis (PCA) to remove redundant features 
-and improve the model's performance.
+stability and interpretability.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/correlation.gif?token=GHSAT0AAAAAAB6GIEH4DO3J2QMDGPKSC37AZB3AGIQ"  width="300" height="200">
@@ -131,17 +128,18 @@ and improve the model's performance.
 Especially features 1 and 2 suffer from extreme high correlation, 
 with a correlation coefficient of 0.98. In such cases, it is often useful to drop 
 one of the highly correlated features to avoid redundancy and improve the model's performance. 
-Therefore, we could consider dropping feature 2 and choosing feature 4 instead.
+Therefore, we could consider dropping feature 2,3 and choosing feature 4,5 instead.
+
 
 However, before making any final decisions on feature selection, it is important to conduct experiments 
-to validate this assumption. We could try running the model with and without feature 2 and compare their 
-performance on a validation set. If the performance of the model without feature 2 is similar or better 
-than the model with feature 2, then dropping it could be a viable option.
+to validate this assumption. We could try running the model with and without feature 3,4 and compare their 
+performance. 
 
-Based on the information you provided earlier, it seems that the top 3 features with low correlation are:
+Based on the discussion it seems that the top 3 features with low correlation are:
+
 1. `org_price_usd_preceding_30_days`
-2. `org_price_usd_preceding_3_days`
-3. `tournament_spins_reward_7_preceding`
+2. `tournament_spins_reward_7_preceding`
+3. `org_price_usd_preceding_3_to_7_days`
 
 If we want to train a model that is less affected by exceptional points but still takes them into account, 
 we can use the RMSLE loss. By doing so, we get a different feature importance ranking 
@@ -151,7 +149,9 @@ that leads to the following top 3 features:
   <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH43QDPPQB64YXYDU2GZB3ACGQ" width="300" height="200">
 </p>
 
-
+ 1. `payment_occurrences_preceding_30_days`
+ 2. `org_price_usd_preceding_3_days`
+ 3. `org_price_usd_triple_preceding_30_days` 
 
 
 **data split** 
@@ -197,12 +197,15 @@ value of 2 (29% of the data) rather than 10.
    2. The assumption is that our main model and loss is optimal (Which is something which should be tested in further research)
    3. given that, we will use all of our training data for the treatment assignment and not split it up for evaluation.
    
-2. Constructing sklearn pipeline wth the following steps :
+2. Constructing sklearn pipeline with the following steps :
    1. Data standardization 
    2. Defining params for turning on XGBregressor  
-   3. Cross validating XBRregressor with 5 folds and rme loss
+   3. Cross validating XBRregressor with 5 folds and rmse loss
    
 3. Evaluating the model decisions -> 2 and 10 assignment ratios 
 
-4. Creating treatment assignment vector on the test set for further investigation 
+4. Creating treatment assignment vector on the test set for further investigation
+5. The method of assignment will be as follows: for each data point, we will make two predictions - 
+6. one with treatment = 2 and another with treatment = 10. Then, we will select the treatment with 
+7. the higher predicted price as the assigned treatment for that data point.
    

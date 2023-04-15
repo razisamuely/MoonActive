@@ -5,13 +5,15 @@ import time
 from typing import List
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
 from xgboost import XGBRegressor
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+
 pd.options.mode.chained_assignment = None
+
 
 def train_and_tune_xgboost_regressor(X_train: pd, y_train: pd, numeric_cols: List[str], loss, verbose=4):
     # Define the preprocessing steps for numerical features
@@ -82,7 +84,7 @@ def assign_treatment(df, model, treatment_values=[2, 10], past_col_name="treatme
 
 
 def save_optimal_treatment_as_json(data: pd, col, directory, file_name):
-    data[col].to_json(f"{directory}/{file_name}.json",orient='columns')
+    data[col].to_json(f"{directory}/{file_name}.json", orient='columns')
 
 
 def dictionry_to_class(dictionary: dict):
@@ -156,3 +158,16 @@ def get_data(path: str, target_col: str, test_size: float, columns_to_drop: str 
         return X_train, X_test, y_train, y_test
     else:
         return X, y
+
+
+def plot_highest_features_diffs(X: pd):
+    x_10 = X[X.treatment_10_predition > X.treatment_2_predition]
+    x_2 = X[X.treatment_10_predition < X.treatment_2_predition]
+
+    x_10 = StandardScaler().fit(X).transform(x_10)
+    x_2 = StandardScaler().fit(X).transform(x_2)
+
+    diffs = x_10.mean(axis=0) - x_2.mean(axis=0)
+
+    plt.barh(X.columns[diffs > 10], diffs[diffs > 10])
+    plt.show()
