@@ -131,3 +131,4 @@ dmypy.json
 moonactive_venv/*
 .ipynb_checkpoints/*
 data/*
+.idea/

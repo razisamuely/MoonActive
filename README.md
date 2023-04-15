@@ -88,16 +88,17 @@ Therefore, feature importance is highly affected by the target, as the model ten
 minimize the loss.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH4E5TRYMGJWU2VI2E4ZB27QRQ"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/loss_convergence_squarederror.png?token=GHSAT0AAAAAAB6GIEH5AAZKFXSTWFNX4SJ4ZB27WTQ
+"  width="300" height="200">
 </p>
-
 
 When the same flow is run with the `squaredlogerror` loss, the model looks at the ratio of 
 error instead of the distance. In such a case, we can see a significant difference in feature importance.
 
 **Features**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH423CZLDABM2TR3ZFSZB26I4Q"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH4E5TRYMGJWU2VI2E4ZB27QRQ
+"  width="300" height="200">
 </p>
 
 
