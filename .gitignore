@@ -128,3 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .ipynb_checkpoints/
+moonactive_venv/*
+.ipynb_checkpoints/*
+data/*

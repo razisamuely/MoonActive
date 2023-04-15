@@ -35,7 +35,7 @@ quick exploratory data analysis (which can be found under
 Towards the end of this `README.md` file, I will provide a detailed list of some 
 additional steps that must be taken in future research.
 
-# Tas1 - Income prediction
+# Task 1 - Income prediction
 
 ### Final results
 
@@ -85,7 +85,7 @@ Even the highest feature importance is among the foolwing features
 2. `org_price_usd_preceding_7_to_30_days`
 3. `org_price_usd_preceding_3_dayss`
 
-all this feautrse are suffer from high correlation (As the gif is shows over the left up corner)
+These features are suffer from high correlation (As the gif is shows over the left up corner)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/2023-04-14%2021.29.15.gif?token=GHSAT0AAAAAAB6GIEH5X4F6ERHHWZSYROACZB2YZKA"  width="300" height="200">
@@ -110,3 +110,23 @@ which considered as the workhorse of the tabular data. And since i had no time
 to compare different algorithm i believe this is a good choice for one shot flow.
 
 
+# Task 2 - Recommendation
+<p align="center">
+    <img src="https://media.tenor.com/4ZgDQzw4lg4AAAAM/value-added-check.gif"  width="100" height="60">
+</p>
+
+
+### Final results
+
+**Recommendation vector**
+Can found under `data/optimal_treatment.json`
+
+**Values assignment distribution**
+70% out of data (140k sampels) our model is agnostic to the treatment value, so in these cases we will prefer to assign 10.
+
+Over the left 30%, our model is significantly tend to assign 2 (29% out of the data) and not 10.
+
+### Top 3 features 
+
+
+   

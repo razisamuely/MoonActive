@@ -33,7 +33,9 @@ def get_data(path: str, target_col: str, test_size:float,columns_to_drop: str = 
     return X_train, X_test, y_train, y_test
 
 
-def train_and_tune_xgboost_regressor(X_train: pd, y_train: pd, numeric_cols: List[str], verbose=4):
+def train_and_tune_xgboost_regressor(X_train: pd, y_train: pd, numeric_cols: List[str],loss, verbose=4):
+
+
     # Define the preprocessing steps for numerical features
     numeric_transformer = Pipeline(steps=[('scaler', StandardScaler())])
 
@@ -54,7 +56,8 @@ def train_and_tune_xgboost_regressor(X_train: pd, y_train: pd, numeric_cols: Lis
         'regressor__subsample': [0.7],
         'regressor__colsample_bytree': [0.7],
         'regressor__n_estimators': [100],
-        'regressor__objective': ['reg:squarederror']
+        'regressor__objective': [f'reg:{loss}']
+
 
     }
 
@@ -113,16 +116,16 @@ def dictionry_to_class(dictionary: dict):
     return class_obj
 
 
-def plot_feature_importance(feature_importances: List[float] , feature_names: List[str]):
+def plot_feature_importance(feature_importances: List[float] , feature_names: List[str] , top_n: int):
     # Assume `model` is an XGBRegressor model trained on data with known feature names
     feature_importance = feature_importances
-    sorted_idx = np.argsort(feature_importance)[::-1][:14]
+    sorted_idx = np.argsort(feature_importance)[::-1][:top_n]
 
     # Plot feature importances
     plt.barh(range(len(sorted_idx)), feature_importance[sorted_idx])
     plt.yticks(range(len(sorted_idx)), [feature_names[i] for i in sorted_idx])
     plt.xlabel('Feature Importance')
-    plt.title('Sorted Feature Importances')
+    plt.title(f'Feature Importance')
     plt.show()
 
 def plot_correlation_top_features(df: pd, top_n: int, feature_importances: List[float] , feature_names: List[str]):
