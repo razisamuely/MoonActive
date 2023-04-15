@@ -88,7 +88,7 @@ Therefore, feature importance is highly affected by the target, as the model ten
 minimize the loss.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH5GMFJDMYRCLCWVELSZB26IMQ"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH4E5TRYMGJWU2VI2E4ZB27QRQ"  width="300" height="200">
 </p>
 
 
