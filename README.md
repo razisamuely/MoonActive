@@ -123,7 +123,7 @@ dimensionality reduction techniques such as principal component analysis (PCA) t
 and improve the model's performance.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/correlation.gif?token=GHSAT0AAAAAAB6GIEH4EAD5TRLM2UEEHQW4ZB27NRQ"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/correlation.gif?token=GHSAT0AAAAAAB6GIEH4DO3J2QMDGPKSC37AZB3AGIQ"  width="300" height="200">
 </p>
 
 
@@ -148,7 +148,7 @@ we can use the RMSLE loss. By doing so, we get a different feature importance ra
 that leads to the following top 3 features:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH43QDPPQB64YXYDU2GZB3ACGQ">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH43QDPPQB64YXYDU2GZB3ACGQ" width="300" height="200">
 </p>
 
 
