@@ -1,4 +1,10 @@
 
+
+<p align="center">
+  <img src="https://media.tenor.com/tL1FAdqvdFsAAAAC/coin-master-free-spins-today-free-spins-and-coins-today.gif"  width="300" height="200">
+</p>
+
+
 # MoonActive - Predict Prices and Recommend Prices
 The main objective of this project is to achieve the following:
 
@@ -191,10 +197,27 @@ value of 2 (29% of the data) rather than 10.
 
 ### Top 3 features 
 
+1. `tournament_spins_reward_7_preceding`
+2. `spins_reward_preceding_30_days`
+3. `org_price_usd_preceding_3_to_7_days`
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/ass_2_diffs.png?token=GHSAT0AAAAAAB6GIEH5LGEW7SCZ5UGGGSD6ZB3BQKA"  width="300" height="200">
+</p>
+
+Since 70% of the data (140k samples) shows that the model is agnostic to the treatment value, 
+I am interested in isolating only the samples where the predicted price differs between 
+the two treatments. I calculated the difference between the means of each 
+feature after standardization with respect to the all population.
+then i selected the features with the highest difference. 
+In future research, when encountering such a situation, 
+it is highly preferable to conduct a statistical test that takes variance into consideration.
+
+
 ### Assignment Structure:
-1. Using train only without verifying on test
-   1. Here interested in focus on the flow of how to choose the best treatment.
-   2. The assumption is that our main model and loss is optimal (Which is something which should be tested in further research)
+1. Using only the training set without verifying on the test set:
+   1. We are interested in focusing on the process of choosing the best treatment.
+   2. The assumption is that our main model and loss are optimal (which should be tested in further research).
    3. given that, we will use all of our training data for the treatment assignment and not split it up for evaluation.
    
 2. Constructing sklearn pipeline with the following steps :
@@ -202,10 +225,9 @@ value of 2 (29% of the data) rather than 10.
    2. Defining params for turning on XGBregressor  
    3. Cross validating XBRregressor with 5 folds and rmse loss
    
-3. Evaluating the model decisions -> 2 and 10 assignment ratios 
-
-4. Creating treatment assignment vector on the test set for further investigation
-5. The method of assignment will be as follows: for each data point, we will make two predictions - 
-6. one with treatment = 2 and another with treatment = 10. Then, we will select the treatment with 
-7. the higher predicted price as the assigned treatment for that data point.
+3. To evaluate the model's decisions, we will look at the assignment ratios for treatments 2 and 10
+4. We will create a treatment assignment vector for the test set, which will allow for further investigation
+5. As previously stated, the method of assignment is as follows: for each data point, 
+we will make two predictions - one with treatment = 2 and another with treatment = 10
+7. We will then select the treatment with the higher predicted price as the assigned treatment for that data point.
    
