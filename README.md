@@ -150,7 +150,7 @@ we can use the RMSLE loss. By doing so, we get a different feature importance ra
 that leads to the following top 3 features:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH423CZLDABM2TR3ZFSZB26I4Q">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH43QDPPQB64YXYDU2GZB3ACGQ">
 </p>
 
 
