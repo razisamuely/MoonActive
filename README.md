@@ -9,7 +9,7 @@ The main objective of this project is to achieve the following:
 
 1. The code for predicting incomes can be found in the file named `Task_1_Prediction.ipynb`.
 2. The code for recommending offers can be found in the file named `Task_2_Recommendation.ipynb.`
-3. The functionality of the project is separated and can be accessed through utils.py.
+3. The functionality of the project is separated and can be accessed through `utils.py`.
 4. The training data and data for offer prediction are stored in the `data` directory.
 5. The trained models are stored in the `model` directory.
 6. A summary of the project, its results, and a discussion can be found in the `README.md` file. 
@@ -29,7 +29,7 @@ fast version of each of these processes. For instance, a Pandas profiling report
 exploratory data analysis, which can be found in profiling_report.html, and only StandardScaler was used 
 for fast preprocessing.
 
-In the following section of this `README.md` file, a detailed list of additional steps that must be taken in future 
+At the end of this `README.md` file, i'll detail list of additional steps that must be taken in future 
 research will be provided.
 
 
@@ -43,20 +43,20 @@ research will be provided.
 
 **RMSE**
 
-1. RMSE on the training data = 75
-2. RMSE on the test data = 75
+1. RMSE on the training data = 77
+2. RMSE on the test data = 103
 
 
 ### Top 3 features 
 1. If we assume that exceptional points occur at the same rate in unseen data:
    2. `org_price_usd_preceding_30_days`
-   2. `org_price_usd_preceding_3_days`
-   3. `tournament_spins_reward_7_preceding`
+   2. `tournament_spins_reward_7_preceding`
+   3. `org_price_usd_preceding_3_to_7_days`
    
 2. If we assume that exceptional points do not represent the majority of future data:
     1. `payment_occurrences_preceding_30_days`
     2. `org_price_usd_preceding_3_days`
-    3. `chests_reward_preceding_30_days` 
+    3. `org_price_usd_triple_preceding_30_days` 
    
 ### Assignment Structure:
 1. Split the given data to train test in a ratios of 0.8 , 0.2 respectively 
@@ -113,8 +113,8 @@ We should also evaluate the model's performance on a validation set and use addi
 techniques such as feature selection, regularization, and ensembling to improve its accuracy.
 
 1. `org_price_usd_preceding_30_days`
-2. `org_price_usd_preceding_7_to_30_days`
-3. `org_price_usd_preceding_3_dayss`
+2. `spins_reward_preceding_30_days`
+3. `org_price_usd_preceding_7_to_30_days`
 
 
 
