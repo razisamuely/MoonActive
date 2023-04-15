@@ -105,7 +105,7 @@ error instead of the euclidean distance. In such a case, we can see a significan
 
 **Features**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH4C2T433ITTRWAHIJIZB3CFKQ"  width="300" height="200">
+  <img src="https://github.com/razisamuely/MoonActive/blob/main/gif/featue%20inportance%20RMSE.png"  width="300" height="200">
 </p>
 
 
@@ -126,7 +126,7 @@ High correlation between features can lead to multicollinearity, which can affec
 stability and interpretability.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/correlation.gif?token=GHSAT0AAAAAAB6GIEH4DNWLVNYYXZMGFHG2ZB3CFWA"  width="300" height="200">
+  <img src="https://github.com/razisamuely/MoonActive/blob/main/gif/correlation.gif"  width="300" height="200">
 </p>
 
 
@@ -202,7 +202,7 @@ value of 2 (29% of the data) rather than 10.
 3. `org_price_usd_preceding_3_to_7_days`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/ass_2_diffs.png?token=GHSAT0AAAAAAB6GIEH42RXTA247VAK5FYU4ZB3CGLA"  width="300" height="200">
+  <img src="https://github.com/razisamuely/MoonActive/blob/main/gif/ass_2_diffs.png"  width="300" height="200">
 </p>
 
 Since 70% of the data (140k samples) shows that the model is agnostic to the treatment value, 
