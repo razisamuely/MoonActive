@@ -1,41 +1,19 @@
 import pandas as pd
-import pandas as pd
-from xgboost import XGBRegressor
 import joblib
 from sklearn.model_selection import train_test_split
-
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_rows', 500)
 import time
-import numpy as np
 from typing import List
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.model_selection import GridSearchCV
 from xgboost import XGBRegressor
-from sklearn.metrics import mean_squared_error
-import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+pd.options.mode.chained_assignment = None
 
-
-def get_data(path: str, target_col: str, test_size:float,columns_to_drop: str = None):
-    df_train = pd.read_csv(path, index_col=0)
-    if columns_to_drop:
-        df_train = df_train.drop(columns=columns_to_drop)
-    X, y = df_train.drop(columns=[target_col]), df_train[[target_col]]
-
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=1)
-
-
-    return X_train, X_test, y_train, y_test
-
-
-def train_and_tune_xgboost_regressor(X_train: pd, y_train: pd, numeric_cols: List[str],loss, verbose=4):
-
-
+def train_and_tune_xgboost_regressor(X_train: pd, y_train: pd, numeric_cols: List[str], loss, verbose=4):
     # Define the preprocessing steps for numerical features
     numeric_transformer = Pipeline(steps=[('scaler', StandardScaler())])
 
@@ -50,14 +28,14 @@ def train_and_tune_xgboost_regressor(X_train: pd, y_train: pd, numeric_cols: Lis
 
     # Define the parameter grid to search over
     param_grid = {
-        'regressor__learning_rate': [0.05],
-        'regressor__max_depth': [3],
-        'regressor__min_child_weight': [1],
-        'regressor__subsample': [0.7],
-        'regressor__colsample_bytree': [0.7],
-        'regressor__n_estimators': [100],
-        'regressor__objective': [f'reg:{loss}']
 
+        'regressor__colsample_bytree': [0.5],
+        'regressor__objective': [f'reg:{loss}'],
+        'regressor__n_estimators': [100, 200],
+        'regressor__max_depth': [3, ],
+        'regressor__learning_rate': [0.01, ],
+        'regressor__reg_alpha': [0.1],
+        'regressor__reg_lambda': [0.1],
 
     }
 
@@ -104,7 +82,7 @@ def assign_treatment(df, model, treatment_values=[2, 10], past_col_name="treatme
 
 
 def save_optimal_treatment_as_json(data: pd, col, directory, file_name):
-    data[[col]].to_json(f"{directory}/{file_name}.json")
+    data[col].to_json(f"{directory}/{file_name}.json",orient='columns')
 
 
 def dictionry_to_class(dictionary: dict):
@@ -116,7 +94,7 @@ def dictionry_to_class(dictionary: dict):
     return class_obj
 
 
-def plot_feature_importance(feature_importances: List[float] , feature_names: List[str] , top_n: int):
+def plot_feature_importance(feature_importances: List[float], feature_names: List[str], top_n: int):
     # Assume `model` is an XGBRegressor model trained on data with known feature names
     feature_importance = feature_importances
     sorted_idx = np.argsort(feature_importance)[::-1][:top_n]
@@ -128,7 +106,8 @@ def plot_feature_importance(feature_importances: List[float] , feature_names: Li
     plt.title(f'Feature Importance')
     plt.show()
 
-def plot_correlation_top_features(df: pd, top_n: int, feature_importances: List[float] , feature_names: List[str]):
+
+def plot_correlation_top_features(df: pd, top_n: int, feature_importances: List[float], feature_names: List[str]):
     feature_importance = feature_importances
     sorted_idx = np.argsort(feature_importance)[::-1][:top_n]
 
@@ -157,3 +136,21 @@ def plot_correlation_top_features(df: pd, top_n: int, feature_importances: List[
     plt.show()
 
 
+def get_data(path: str, target_col: str, test_size: float, columns_to_drop: str = None):
+    df_train = pd.read_csv(path, index_col=0)
+    for i in columns_to_drop:
+        if i in df_train.columns:
+            df_train = df_train.drop(columns=i)
+
+    if target_col in df_train.columns:
+
+        X, y = df_train.drop(columns=[target_col]), df_train[[target_col]]
+    else:
+        return df_train
+
+    if test_size > 0:
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=1)
+
+        return X_train, X_test, y_train, y_test
+    else:
+        return X, y
