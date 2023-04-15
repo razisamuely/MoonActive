@@ -152,7 +152,7 @@ we can use the RMSLE loss. By doing so, we get a different feature importance ra
 that leads to the following top 3 features:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH45Z45ZVICFCZ3PMFMZB3CGAA" width="300" height="200">
+  <img src="https://github.com/razisamuely/MoonActive/blob/main/gif/featue%20inportance%20RMSLE.png" width="300" height="200">
 </p>
 
  1. `payment_occurrences_preceding_30_days`
