@@ -97,7 +97,7 @@ both based on the plot and the difference between the test and train data that w
 For future research, we will also implement early stopping.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/loss_convergence.png?token=GHSAT0AAAAAAB6GIEH464WLKRMS772JLI2WZB3B6KQ"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/loss_convergence.png?token=GHSAT0AAAAAAB6GIEH5C5HTWTKW72BS3K64ZB3CFAQ"  width="300" height="200">
 </p>
 
 When the same flow is run with the `squaredlogerror` loss, the model looks at the ratio of 
@@ -105,7 +105,7 @@ error instead of the euclidean distance. In such a case, we can see a significan
 
 **Features**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH5MWVULF4PDLRHYYFOZB3B64Q"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH4C2T433ITTRWAHIJIZB3CFKQ"  width="300" height="200">
 </p>
 
 
@@ -126,7 +126,7 @@ High correlation between features can lead to multicollinearity, which can affec
 stability and interpretability.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/correlation.gif?token=GHSAT0AAAAAAB6GIEH4UJYU6OBPL2P6KID4ZB3B7JA"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/correlation.gif?token=GHSAT0AAAAAAB6GIEH4DNWLVNYYXZMGFHG2ZB3CFWA"  width="300" height="200">
 </p>
 
 
@@ -152,7 +152,7 @@ we can use the RMSLE loss. By doing so, we get a different feature importance ra
 that leads to the following top 3 features:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH4UI3AOP442TEWBIRQZB3B7SA" width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH45Z45ZVICFCZ3PMFMZB3CGAA" width="300" height="200">
 </p>
 
  1. `payment_occurrences_preceding_30_days`
@@ -202,7 +202,7 @@ value of 2 (29% of the data) rather than 10.
 3. `org_price_usd_preceding_3_to_7_days`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/ass_2_diffs.png?token=GHSAT0AAAAAAB6GIEH5LGEW7SCZ5UGGGSD6ZB3BQKA"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/ass_2_diffs.png?token=GHSAT0AAAAAAB6GIEH42RXTA247VAK5FYU4ZB3CGLA"  width="300" height="200">
 </p>
 
 Since 70% of the data (140k samples) shows that the model is agnostic to the treatment value, 
