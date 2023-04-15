@@ -88,7 +88,7 @@ Therefore, feature importance is highly affected by the target, as the model ten
 minimize the loss.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/loss_convergence_squarederror.png?token=GHSAT0AAAAAAB6GIEH5ER2VXTZ77U7VNIIAZB23V2Q"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH5GMFJDMYRCLCWVELSZB26IMQ"  width="300" height="200">
 </p>
 
 
@@ -97,7 +97,7 @@ error instead of the distance. In such a case, we can see a significant differen
 
 **Features**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH5JKYAVX73B3VJBABSZB23XWA">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH423CZLDABM2TR3ZFSZB26I4Q">
 </p>
 
 
@@ -115,12 +115,17 @@ techniques such as feature selection, regularization, and ensembling to improve 
 2. `org_price_usd_preceding_7_to_30_days`
 3. `org_price_usd_preceding_3_dayss`
 
+
+
 These features suffer from high correlation, as shown in the gif in the top left corner. 
 High correlation between features can lead to multicollinearity, which can affect the model's 
 stability and interpretability. In such cases, it is often useful to perform feature selection or 
 dimensionality reduction techniques such as principal component analysis (PCA) to remove redundant features 
 and improve the model's performance.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/2023-04-14%2021.29.15.gif?token=GHSAT0AAAAAAB6GIEH5EZ4JL5O3IC35ZEIGZB26K3A">
+</p>
 
 
 
@@ -144,7 +149,7 @@ we can use the RMSLE loss. By doing so, we get a different feature importance ra
 that leads to the following top 3 features:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH4GCGJQZWHVIIYBPNCZB23YKA">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH423CZLDABM2TR3ZFSZB26I4Q">
 </p>
 
 
