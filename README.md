@@ -49,7 +49,7 @@ research will be provided.
 
 ### Top 3 features 
 1. If we assume that exceptional points occur at the same rate in unseen data:
-   2. `org_price_usd_preceding_30_days`
+   1. `org_price_usd_preceding_30_days`
    2. `tournament_spins_reward_7_preceding`
    3. `org_price_usd_preceding_3_to_7_days`
    
@@ -88,8 +88,7 @@ Therefore, feature importance is highly affected by the target, as the model ten
 minimize the loss.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/loss_convergence_squarederror.png?token=GHSAT0AAAAAAB6GIEH5AAZKFXSTWFNX4SJ4ZB27WTQ
-"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/loss_convergence.png?token=GHSAT0AAAAAAB6GIEH4CS7Q2DZFMN4BFWSEZB3AEQA"  width="300" height="200">
 </p>
 
 When the same flow is run with the `squaredlogerror` loss, the model looks at the ratio of 
@@ -97,8 +96,7 @@ error instead of the distance. In such a case, we can see a significant differen
 
 **Features**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH4E5TRYMGJWU2VI2E4ZB27QRQ
-"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH5DWYV6UZ6MWSEJUHWZB3AE4Q"  width="300" height="200">
 </p>
 
 
