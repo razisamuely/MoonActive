@@ -124,7 +124,7 @@ dimensionality reduction techniques such as principal component analysis (PCA) t
 and improve the model's performance.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/2023-04-14%2021.29.15.gif?token=GHSAT0AAAAAAB6GIEH5EZ4JL5O3IC35ZEIGZB26K3A"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/correlation.gif?token=GHSAT0AAAAAAB6GIEH4EAD5TRLM2UEEHQW4ZB27NRQ"  width="300" height="200">
 </p>
 
 
