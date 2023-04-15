@@ -97,7 +97,7 @@ both based on the plot and the difference between the test and train data that w
 For future research, we will also implement early stopping.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/loss_convergence.png?token=GHSAT0AAAAAAB6GIEH5C5HTWTKW72BS3K64ZB3CFAQ"  width="300" height="200">
+  <img src="https://github.com/razisamuely/MoonActive/blob/main/gif/loss_convergence.png" width="300" height="200">
 </p>
 
 When the same flow is run with the `squaredlogerror` loss, the model looks at the ratio of 
