@@ -68,7 +68,7 @@ additional steps that must be taken in future research.
 **Results**
 **Learning curve**:
 
-As it shown there is a convergance.
+As it shown there is a convergence.
 
 **loss**
 The loss is defined to be on `squarederror` which push the model to over attention for errors in samples with high target values.
@@ -88,11 +88,11 @@ Even the highest feature importance is among the foolwing features
 all this feautrse are suffer from high correlation (As the gif is shows over the left up corner)
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/2023-04-14%2021.29.15.gif?token=GHSAT0AAAAAAB6GIEH4A33QLMECY6TEPNCKZBZTRZQ"  width="200" height="100">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/2023-04-14%2021.29.15.gif?token=GHSAT0AAAAAAB6GIEH5X4F6ERHHWZSYROACZB2YZKA"  width="300" height="200">
 </p>
 
 Espcially features 1 and 2 suffer from extreme high correlation (0.98)
-so we can give up 2 and choose 4 instead.(Future research should this assumption by conductin simple experiment with and without the this feature.)
+so we can give up 2 and choose 4 instead.(Future research should this assumption by conductin simple experiment with and without the  feature.)
 
 So the final top 3 features are which as low correlation:
 1. `org_price_usd_preceding_30_days`
@@ -102,11 +102,9 @@ So the final top 3 features are which as low correlation:
 
 
 
-features 
-As it lookes like the  higher 
-
 **data split** - Since there is no available testing data and no knowledge about the 
 time relations between point is decide to stick the standard of 0.8, 0.2 train tst split
+
 **Algorithm** - I chose to work with one main algorithms [XGBregressor](https://xgboost.readthedocs.io/en/stable/python/python_api.html)
 which considered as the workhorse of the tabular data. And since i had no time 
 to compare different algorithm i believe this is a good choice for one shot flow.
