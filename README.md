@@ -97,7 +97,7 @@ both based on the plot and the difference between the test and train data that w
 For future research, we will also implement early stopping.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/loss_convergence.png?token=GHSAT0AAAAAAB6GIEH4CS7Q2DZFMN4BFWSEZB3AEQA"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/loss_convergence.png?token=GHSAT0AAAAAAB6GIEH464WLKRMS772JLI2WZB3B6KQ"  width="300" height="200">
 </p>
 
 When the same flow is run with the `squaredlogerror` loss, the model looks at the ratio of 
@@ -105,7 +105,7 @@ error instead of the euclidean distance. In such a case, we can see a significan
 
 **Features**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH5DWYV6UZ6MWSEJUHWZB3AE4Q"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSE.png?token=GHSAT0AAAAAAB6GIEH5MWVULF4PDLRHYYFOZB3B64Q"  width="300" height="200">
 </p>
 
 
@@ -126,7 +126,7 @@ High correlation between features can lead to multicollinearity, which can affec
 stability and interpretability.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/correlation.gif?token=GHSAT0AAAAAAB6GIEH4DO3J2QMDGPKSC37AZB3AGIQ"  width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/correlation.gif?token=GHSAT0AAAAAAB6GIEH4UJYU6OBPL2P6KID4ZB3B7JA"  width="300" height="200">
 </p>
 
 
@@ -152,7 +152,7 @@ we can use the RMSLE loss. By doing so, we get a different feature importance ra
 that leads to the following top 3 features:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH43QDPPQB64YXYDU2GZB3ACGQ" width="300" height="200">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH4UI3AOP442TEWBIRQZB3B7SA" width="300" height="200">
 </p>
 
  1. `payment_occurrences_preceding_30_days`
@@ -231,3 +231,19 @@ it is highly preferable to conduct a statistical test that takes variance into c
 we will make two predictions - one with treatment = 2 and another with treatment = 10
 7. We will then select the treatment with the higher predicted price as the assigned treatment for that data point.
    
+## Farther research 
+Please note that this is a first and short iteration, and its main goal is to prove the concept. Given this, there is a lot of room for improvement and further research. Some things that could be added include:
+
+Using addtional feature selection process, such as SHAP, regularization penalties, and others
+Bigger Grid search to optimize model parameters
+Comparison with other ml models such as regression, loightGBM etc
+Further EDA to uncover more insights from the data
+Deep dive into the differences between the results of the test and train sets
+Testing the statistics of the results, such as the mean, max errors and median
+Data enrichment by: Featuer creation and features from external sources
+Plotting the error against time
+Adding a histogram of errors for better visualization.
+
+## Cdoe structur 
+Please note that the code for this project is not written in classes as is typically done. 
+Instead, the code is organized in a procedural manner for simplicity and ease of understanding.
