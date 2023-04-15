@@ -133,6 +133,8 @@ def plot_correlation_top_features(df: pd, top_n: int, feature_importances: List[
     ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=30)
 
     # show the plot
+    plt.tight_layout()
+    plt.savefig(f"gif/{top_n}.png")
     plt.show()
 
 
