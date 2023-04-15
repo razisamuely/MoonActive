@@ -97,7 +97,7 @@ error instead of the distance. In such a case, we can see a significant differen
 
 **Features**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH423CZLDABM2TR3ZFSZB26I4Q">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/featue%20inportance%20RMSLE.png?token=GHSAT0AAAAAAB6GIEH423CZLDABM2TR3ZFSZB26I4Q"  width="300" height="200">
 </p>
 
 
@@ -124,7 +124,7 @@ dimensionality reduction techniques such as principal component analysis (PCA) t
 and improve the model's performance.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/2023-04-14%2021.29.15.gif?token=GHSAT0AAAAAAB6GIEH5EZ4JL5O3IC35ZEIGZB26K3A">
+  <img src="https://raw.githubusercontent.com/razisamuely/MoonActive/main/gif/2023-04-14%2021.29.15.gif?token=GHSAT0AAAAAAB6GIEH5EZ4JL5O3IC35ZEIGZB26K3A"  width="300" height="200">
 </p>
 
 
